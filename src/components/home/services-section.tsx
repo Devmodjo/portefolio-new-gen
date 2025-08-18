@@ -1,0 +1,81 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Code, Palette, Megaphone,Monitor ,Smartphone, Globe, Database } from "lucide-react";
+
+const ServicesSection = () => {
+  const services = [
+    {
+      icon: Palette,
+      title: "UI/UX Design",
+      description: "I create intuitive and aesthetically pleasing interfaces, providing a smooth and engaging user experience for your projects."
+    },
+    {
+      icon: Code,
+      title: "Coding",
+      description: "I develop custom solutions with clean, efficient, and optimized code to deliver reliable and high-performance results."
+    },
+    {
+      icon: Monitor,
+      title: "Desktop Development",
+      description: "I design strong, memorable brands that connect with audiences, ensuring a consistent visual identity across all platforms."
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile Development",
+      description: "Creating responsive mobile applications with modern frameworks, ensuring optimal performance across all devices."
+    },
+    {
+      icon: Globe,
+      title: "Web Development",
+      description: "Full-stack web development using cutting-edge technologies to build scalable and maintainable applications."
+    },
+    {
+      icon: Database,
+      title: "Backend Solutions",
+      description: "Robust backend architecture design and implementation to support your applications with reliable data management."
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <p className="text-primary font-medium mb-2 title1">my services</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 title3">
+            What I do?
+          </h2>
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto title2">
+            Passionate about creating innovative digital solutions. Here's what I can do for you.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <Card 
+                key={index} 
+                className="bg-gradient-card border-border-light hover:border-primary/50 transition-smooth shadow-card hover:shadow-glow group"
+              >
+                <CardContent className="p-8">
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-primary">
+                      <Icon className="w-8 h-8 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-xl font-bold text-text-primary mb-3 title3">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-text-secondary leading-relaxed title2">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ServicesSection;
