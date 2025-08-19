@@ -5,7 +5,7 @@
 
 /* Portfolio Design System - Inspired by Jumael Kamga's design */
 
-@layer base {
+@layer base { 
   :root {
     /* Dark theme base colors */
     --background: 240 10% 6%;
@@ -13,10 +13,10 @@
     --background-card: 240 10% 8%;
     --foreground: 0 0% 98%;
     
-    /* Brand colors - Red/Orange gradient theme */
-    --primary: 14 100% 57%;  /* Bright orange-red */
-    --primary-glow: 25 100% 62%;  /* Warm orange */
-    --primary-dark: 8 90% 45%;
+    /* Brand colors - Green gradient theme */
+    --primary: 145 65% 45%;   /* Vert vif */
+    --primary-glow: 150 70% 50%;  /* Vert clair lumineux */
+    --primary-dark: 140 60% 35%;  /* Vert foncé */
     --primary-foreground: 0 0% 100%;
     
     /* Secondary colors */
@@ -24,7 +24,7 @@
     --secondary-foreground: 0 0% 85%;
     
     /* Accent colors */
-    --accent: 14 100% 57%;
+    --accent: 145 65% 45%;
     --accent-foreground: 0 0% 100%;
     
     /* Text colors */
@@ -36,7 +36,7 @@
     --border: 240 10% 15%;
     --border-light: 240 8% 20%;
     --input: 240 10% 12%;
-    --ring: 14 100% 57%;
+    --ring: 145 65% 45%;
     
     /* Card styling */
     --card: 240 10% 8%;
@@ -85,14 +85,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: orange;
+  background-color: green;
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: orange;
+  background-color: green;
 }
 
 
