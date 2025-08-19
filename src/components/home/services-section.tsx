@@ -4,9 +4,9 @@ import { Code, Palette, Megaphone,Monitor ,Smartphone, Globe, Database } from "l
 const ServicesSection = () => {
   const services = [
     {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "I create intuitive and aesthetically pleasing interfaces, providing a smooth and engaging user experience for your projects."
+      icon: Database,
+      title: "Backend Solutions",
+      description: "Robust backend architecture design and implementation to support your applications with reliable data management."
     },
     {
       icon: Code,
@@ -14,25 +14,26 @@ const ServicesSection = () => {
       description: "I develop custom solutions with clean, efficient, and optimized code to deliver reliable and high-performance results."
     },
     {
+      icon: Globe,
+      title: "Web Development",
+      description: "Full-stack web development using cutting-edge technologies to build scalable and maintainable applications."
+    },
+    {
       icon: Monitor,
       title: "Desktop Development",
-      description: "I design strong, memorable brands that connect with audiences, ensuring a consistent visual identity across all platforms."
+      description: "I build powerful and reliable desktop applications tailored to user needs, with a focus on performance, security, and seamless experience."
     },
     {
       icon: Smartphone,
       title: "Mobile Development",
       description: "Creating responsive mobile applications with modern frameworks, ensuring optimal performance across all devices."
     },
-    {
-      icon: Globe,
-      title: "Web Development",
-      description: "Full-stack web development using cutting-edge technologies to build scalable and maintainable applications."
-    },
-    {
-      icon: Database,
-      title: "Backend Solutions",
-      description: "Robust backend architecture design and implementation to support your applications with reliable data management."
-    }
+    // {
+    //   icon: Palette,
+    //   title: "UI/UX Design",
+    //   description: "I create intuitive and aesthetically pleasing interfaces, providing a smooth and engaging user experience for your projects."
+    // },
+    
   ];
 
   return (

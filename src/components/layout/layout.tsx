@@ -10,8 +10,8 @@ interface LayoutProps {
 
 const Layout = ({ 
   children, 
-  title = "Modjo victor- Développeur Web Java React & IT student",
-  description = "Portfolio de Modjo victor, développeur web, mobile, desktop spécialisé dans la création de solutions digitales innovantes et performantes.",
+  title = "Modjo victor- Développeur Web Java React & Backend specialist",
+  description = "Portfolio de Modjo victor, développeur backend,développeur web, mobile, desktop spécialisé dans la création de solutions digitales innovantes et performantes.",
   keywords = "développeur web, dévellopeur backend, Java, React, développement web, portfolio, Modjo Victor, solutions digitales"
 }: LayoutProps) => {
   

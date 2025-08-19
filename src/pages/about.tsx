@@ -6,27 +6,27 @@ import aboutBg from "@/assets/about-bg.jpg";
 
 const About = () => {
   const skills = [
-    { icon: Code, name: "Frontend Development", level: 95 },
-    { icon: Database, name: "Backend Development", level: 90 },
-    { icon: Palette, name: "UI/UX Design", level: 85 },
-    { icon: Globe, name: "Web Technologies", level: 92 }
+    { icon: Database, name: "Backend Development", level: 70 },
+    { icon: Code, name: "Frontend Development", level: 55 },
+    // { icon: Palette, name: "", level: 85 },
+    { icon: Globe, name: "Web Technologies", level:49 }
   ];
 
   return (
     <Layout
-      title="À Propos - Jumael Kamga | Développeur Web & Designer UI/UX"
-      description="Découvrez le parcours et les compétences de Jumael Kamga, développeur web passionné et designer UI/UX créatif basé à Douala."
-      keywords="à propos, Jumael Kamga, parcours, compétences, développeur web, designer UI/UX, expérience"
+      title="À Propos - Modjo Victor| Développeur Web & Backend Specialist"
+      description="Découvrez le parcours et les compétences de Modjo Victor, développeur web passionné et Backend specialist basé à yaoundé"
+      keywords="à propos, Modjo Victor, parcours, compétences, développeur web, designer UI/UX, expérience"
     >
       <section className="py-20 bg-background min-h-screen">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6 title3">
               À Propos de Moi
             </h1>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              Découvrez mon parcours et ma passion pour le développement web et le design.
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto title1">
+              Découvrez mon parcours et ma passion pour le développement d'applications.
             </p>
           </div>
 
@@ -47,9 +47,9 @@ const About = () => {
                   <div className="flex items-center justify-center h-full">
                     <div className="text-center">
                       <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-primary-foreground">JK</span>
+                        <span className="text-2xl font-bold text-primary-foreground">MV</span>
                       </div>
-                      <p className="text-text-primary font-semibold">Jumael Kamga</p>
+                      <p className="text-text-primary font-semibold">Modjo Victor</p>
                       <p className="text-text-secondary text-sm">Full Stack Developer</p>
                     </div>
                   </div>
@@ -60,18 +60,17 @@ const About = () => {
             {/* Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-6 title3">
                   Qui suis-je ?
                 </h2>
-                <div className="space-y-4 text-text-secondary text-lg leading-relaxed">
+                <div className="space-y-4 text-text-secondary text-lg leading-relaxed title1">
                   <p>
-                    Je suis Jumael Kamga, un développeur web passionné et étudiant en informatique 
-                    basé à Douala, Cameroun. Depuis plus de 3 ans, je me spécialise dans la création 
+                    Je suis Modjo Victor, un développeur web passionné et étudiant en informatique 
+                    basé Yaoundé, Cameroun. je me spécialise dans la création 
                     de solutions digitales innovantes et performantes.
                   </p>
                   <p>
-                    Mon expertise couvre le développement frontend et backend, ainsi que le design 
-                    UI/UX. J'ai une approche centrée sur l'utilisateur et je m'efforce de créer 
+                    Mon expertise couvre le développement frontend et backend, ainsi architecture logiciel. J'ai une approche centrée sur l'utilisateur et je m'efforce de créer 
                     des expériences web fluides et intuitives.
                   </p>
                   <p>
@@ -88,7 +87,7 @@ const About = () => {
                   size="lg"
                   className="bg-gradient-primary hover:opacity-90 border-0 shadow-primary hover:shadow-glow transition-smooth"
                 >
-                  <a href="mailto:jumaelkamga1@gmail.com">
+                  <a href="mailto:yvankamsu88@gmail.com">
                     <Mail className="mr-2 w-5 h-5" />
                     Me Contacter
                   </a>
@@ -100,7 +99,7 @@ const About = () => {
                   asChild
                   className="border-border-light hover:border-primary hover:bg-primary/10"
                 >
-                  <a href="/cv-jumael-kamga.pdf" download>
+                  <a href="/Victor Modjo _ LinkedIn.pdf" download>
                     <Download className="mr-2 w-5 h-5" />
                     Télécharger CV
                   </a>
@@ -110,8 +109,8 @@ const About = () => {
           </div>
 
           {/* Skills Section */}
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-text-primary text-center mb-12">
+          <div className="mb-20 flex justify-center flex-col">
+            <h3 className="text-3xl font-bold text-text-primary text-center mb-12 title3">
               Mes Compétences
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -123,7 +122,7 @@ const About = () => {
                       <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-primary">
                         <Icon className="w-8 h-8 text-primary-foreground" />
                       </div>
-                      <h4 className="text-lg font-semibold text-text-primary mb-3">
+                      <h4 className="text-lg font-semibold text-text-primary mb-3 title3">
                         {skill.name}
                       </h4>
                       
@@ -144,7 +143,7 @@ const About = () => {
 
           {/* Experience Timeline */}
           <div className="mb-20">
-            <h3 className="text-3xl font-bold text-text-primary text-center mb-12">
+            <h3 className="text-3xl font-bold text-text-primary text-center mb-12 title3">
               Mon Parcours
             </h3>
             <div className="max-w-3xl mx-auto space-y-8">

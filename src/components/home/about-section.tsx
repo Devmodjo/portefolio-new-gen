@@ -49,7 +49,7 @@ const AboutSection = () => {
             <div className="space-y-6">
               <p className="text-text-secondary text-lg leading-relaxed title2">
                 I am a web developer and IT student, passionate about creating innovative digital solutions. 
-                Specializing in designing responsive, high-performance websites tailored to various needs, 
+                Specializing in Backend Development, high-performance websites tailored to various needs, 
                 I focus on providing smooth and intuitive user experiences.
               </p>
               

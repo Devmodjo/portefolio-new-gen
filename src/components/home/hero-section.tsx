@@ -20,13 +20,13 @@ const HeroSection = () => {
               Modjo Victor.
             </h1>
             <h2 className="text-2xl md:text-3xl text-text-secondary font-medium title1">
-             Spring boot, React Developer & IT student
+             Spring boot, React Developer & Backend Specialist
             </h2>
           </div>
           
           <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-lg title2">
-            I build fully responsive websites for those who need professional solutions or personal use. 
-            Are you looking for IT solutions?
+            Je conçois et développe des solutions logicielles innovantes, pensées pour répondre à des besoins réels et résoudre des problématiques concrètes.
+            Spécialisé dans le développement backend, j’apporte des réponses solides, fiables et évolutives à ceux qui recherchent une expertise technique pour transformer leurs idées en solutions performantes.
           </p>
           
           {/* Social Links */}
@@ -110,7 +110,7 @@ const HeroSection = () => {
             <div className="relative w-80 h-80 md:w-96 md:h-96 bg-gradient-card rounded-full overflow-hidden shadow-card border-4 border-border-light">
               <img
                 src={heroImage}
-                alt="Modjo victor - Dévellopeur d'application & solution numérique"
+                alt="Modjo victor - Dévellopeur backend & solution numérique"
                 className="w-full h-full object-cover"
               />
               

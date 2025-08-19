@@ -50,12 +50,12 @@ const Navigation = () => {
                 )}
               </Link>
             ))}
-            <Link to="/admin">
+            {/* <Link to="/admin">
               <Button variant="outline" size="sm" className="gap-2">
                 <Settings className="w-4 h-4" />
                 Admin
               </Button>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile menu button */}
