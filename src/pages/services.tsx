@@ -1,114 +1,170 @@
 import Layout from "@/components/layout/layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Code, 
-  Palette, 
-  Megaphone, 
-  Smartphone, 
-  Globe, 
+import {
+  Code,
+  Palette,
+  Megaphone,
+  Smartphone,
+  Monitor,
+  Globe,
   Database,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
+import {
+  SiSpringboot,
+  SiOpenjdk,
+  SiReact,
+  SiPhp,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiDocker,
+  SiGithub,
+  SiGitlab,
+  SiPostman,
+  SiSwagger,
+  SiGit ,
+  SiMicrogenetics, // Pour Microservices (alternative)
+  SiSpringsecurity,
+  SiSpring,
+} from "react-icons/si";
+import { IconType } from "react-icons";
+
+// Interface pour typer les technologies
+interface Technology {
+  name: string;
+  icon: IconType;
+  color?: string; // Couleur optionnelle pour l'icône
+}
+
+const technologies: Technology[] = [
+  { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
+  { name: "Java", icon: SiOpenjdk, color: "#ED8B00" },
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "PHP", icon: SiPhp, color: "#777BB4" },
+  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "Docker", icon: SiDocker, color: "#2496ED" },
+  {name: "Git", icon: SiGit, color: "#FF6C37" },
+  { name: "GitHub", icon: SiGithub, color: "#181717" },
+  { name: "GitLab", icon: SiGitlab, color: "#FCA326" },
+  { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+  { name: "Swagger", icon: SiSwagger, color: "#85EA2D" },
+  { name: "Microservices", icon: SiMicrogenetics, color: "#FF6B6B" },
+  { name: "Spring Security", icon: SiSpringsecurity, color: "#6DB33F" },
+  { name: "Spring Cloud", icon: SiSpring, color: "#6DB33F" },
+];
 
 const Services = () => {
   const services = [
     {
       icon: Code,
       title: "Développement Web",
-      description: "Création d'applications web modernes et performantes avec les dernières technologies.",
+      description:
+        "Création d'applications web modernes et performantes avec les dernières technologies.",
       features: [
         "Sites web responsives",
-        "Applications web complexes", 
+        "Applications web complexes",
         "E-commerce",
-        "Intégration API"
+        "Intégration API",
       ],
-      price: "À partir de 500€"
+      price: "À partir de 500€",
     },
     {
       icon: Palette,
       title: "Design UI/UX",
-      description: "Conception d'interfaces utilisateur intuitives et esthétiques pour une expérience optimale.",
+      description:
+        "Conception d'interfaces utilisateur intuitives et esthétiques pour une expérience optimale.",
       features: [
         "Maquettes et prototypes",
         "Design d'interface",
         "Expérience utilisateur",
-        "Design system"
+        "Design system",
       ],
-      price: "À partir de 300€"
+      price: "À partir de 300€",
     },
     {
       icon: Smartphone,
       title: "Applications Mobile",
-      description: "Développement d'applications mobiles cross-platform avec React Native.",
+      description:
+        "Développement d'applications mobiles cross-platform avec React Native.",
       features: [
         "Applications iOS/Android",
         "Interface native",
         "Performance optimisée",
-        "Déploiement stores"
+        "Déploiement stores",
       ],
-      price: "À partir de 800€"
+      price: "À partir de 800€",
     },
     {
       icon: Database,
       title: "Backend & API",
-      description: "Développement de solutions backend robustes et d'APIs sécurisées.",
+      description:
+        "Développement de solutions backend robustes et d'APIs sécurisées.",
       features: [
         "APIs REST/GraphQL",
         "Base de données",
         "Authentification",
-        "Hébergement cloud"
+        "Hébergement cloud",
       ],
-      price: "À partir de 400€"
+      price: "À partir de 400€",
     },
     {
       icon: Megaphone,
       title: "Branding Digital",
-      description: "Création d'identité visuelle forte et cohérente pour votre marque.",
+      description:
+        "Création d'identité visuelle forte et cohérente pour votre marque.",
       features: [
         "Logo et charte graphique",
         "Identité visuelle",
         "Marketing digital",
-        "Stratégie de marque"
+        "Stratégie de marque",
       ],
-      price: "À partir de 250€"
+      price: "À partir de 250€",
     },
     {
       icon: Globe,
       title: "Optimisation & SEO",
-      description: "Amélioration des performances et du référencement de votre site web.",
+      description:
+        "Amélioration des performances et du référencement de votre site web.",
       features: [
         "Optimisation SEO",
         "Performance web",
         "Analytics",
-        "Maintenance"
+        "Maintenance",
       ],
-      price: "À partir de 200€"
-    }
+      price: "À partir de 200€",
+    },
   ];
 
   const processSteps = [
     {
       step: "01",
       title: "Consultation",
-      description: "Discussion de vos besoins et objectifs pour définir le projet ensemble."
+      description:
+        "Discussion de vos besoins et objectifs pour définir le projet ensemble.",
     },
     {
-      step: "02", 
+      step: "02",
       title: "Conception",
-      description: "Création des maquettes et planification de l'architecture technique."
+      description:
+        "Création des maquettes et planification de l'architecture technique.",
     },
     {
       step: "03",
-      title: "Développement", 
-      description: "Réalisation du projet avec des points de validation réguliers."
+      title: "Développement",
+      description:
+        "Réalisation du projet avec des points de validation réguliers.",
     },
     {
       step: "04",
       title: "Livraison",
-      description: "Déploiement, formation et accompagnement pour la mise en ligne."
-    }
+      description:
+        "Déploiement, formation et accompagnement pour la mise en ligne.",
+    },
   ];
 
   return (
@@ -121,11 +177,12 @@ const Services = () => {
         <div className="container mx-auto px-4">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6 title3">
               Mes Services
             </h1>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              Solutions digitales complètes pour donner vie à vos projets avec expertise et créativité.
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto title1">
+              Solutions digitales complètes pour donner vie à vos projets avec
+              expertise et créativité.
             </p>
           </div>
 
@@ -134,8 +191,8 @@ const Services = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="bg-gradient-card border-border-light hover:border-primary/50 transition-smooth shadow-card hover:shadow-glow group h-full"
                 >
                   <CardHeader>
@@ -145,24 +202,26 @@ const Services = () => {
                     <CardTitle className="text-xl text-text-primary mb-2">
                       {service.title}
                     </CardTitle>
-                    <p className="text-text-secondary">
-                      {service.description}
-                    </p>
+                    <p className="text-text-secondary">{service.description}</p>
                   </CardHeader>
-                  
+
                   <CardContent>
                     <div className="space-y-3 mb-6">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-3">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-text-secondary text-sm">{feature}</span>
+                          <span className="text-text-secondary text-sm">
+                            {feature}
+                          </span>
                         </div>
                       ))}
                     </div>
-                    
+
                     <div className="border-t border-border pt-4">
-                      <p className="text-primary font-semibold mb-4">{service.price}</p>
-                      <Button 
+                      <p className="text-primary font-semibold mb-4">
+                        {service.price}
+                      </p>
+                      <Button
                         variant="outline"
                         className="w-full group/btn border-border-light hover:border-primary hover:bg-primary/10"
                       >
@@ -179,17 +238,21 @@ const Services = () => {
           {/* Process Section */}
           <div className="mb-20">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4 title3">
                 Mon Processus de Travail
               </h2>
-              <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-                Une approche structurée pour garantir la réussite de votre projet.
+              <p className="text-text-secondary text-lg max-w-2xl mx-auto title1">
+                Une approche structurée pour garantir la réussite de votre
+                projet.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {processSteps.map((process, index) => (
-                <Card key={index} className="bg-gradient-card border-border-light shadow-card text-center group">
+                <Card
+                  key={index}
+                  className="bg-gradient-card border-border-light shadow-card text-center group"
+                >
                   <CardContent className="p-8">
                     <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-primary">
                       <span className="text-primary-foreground font-bold text-lg">
@@ -199,9 +262,7 @@ const Services = () => {
                     <h3 className="text-xl font-bold text-text-primary mb-3">
                       {process.title}
                     </h3>
-                    <p className="text-text-secondary">
-                      {process.description}
-                    </p>
+                    <p className="text-text-secondary">{process.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -211,34 +272,37 @@ const Services = () => {
           {/* Technologies Section */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4 title3">
                 Technologies Utilisées
               </h2>
-              <p className="text-text-secondary text-lg">
+              <p className="text-text-secondary text-lg title1">
                 Stack technique moderne pour des solutions performantes.
               </p>
             </div>
 
             <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-6">
-              {[
-                "React", "Node.js", "TypeScript", "MongoDB", 
-                "PostgreSQL", "AWS", "Docker", "Figma",
-                "Next.js", "Express", "Python", "Firebase"
-              ].map((tech, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-card border border-border-light rounded-lg p-4 text-center hover:border-primary/50 transition-smooth shadow-card hover:shadow-glow group"
-                >
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <span className="text-primary-foreground font-bold text-xs">
-                      {tech.slice(0, 2).toUpperCase()}
-                    </span>
+              {technologies.map((tech, index) => {
+                const IconComponent = tech.icon;
+
+                return (
+                  <div
+                    key={index}
+                    className="bg-gradient-card border border-border-light rounded-lg p-4 text-center hover:border-primary/50 transition-smooth shadow-card hover:shadow-glow group"
+                  >
+                    <div className="w-12 h-12 rounded-lg mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <IconComponent
+                        className="text-primary-foreground"
+                        size={24}
+                        // Optionnel : utiliser la couleur spécifique de l'icône
+                        style={{ color: tech.color }}
+                      />
+                    </div>
+                    <p className="text-text-primary text-sm font-medium">
+                      {tech.name}
+                    </p>
                   </div>
-                  <p className="text-text-primary text-sm font-medium">
-                    {tech}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -248,7 +312,8 @@ const Services = () => {
               Prêt à Démarrer Votre Projet ?
             </h2>
             <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-              Discutons de vos besoins et voyons comment je peux vous aider à concrétiser vos idées.
+              Discutons de vos besoins et voyons comment je peux vous aider à
+              concrétiser vos idées.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -256,18 +321,20 @@ const Services = () => {
                 size="lg"
                 className="bg-gradient-primary hover:opacity-90 border-0 shadow-primary hover:shadow-glow transition-smooth"
               >
-                <a href="/contact">
-                  Commencer un Projet
-                </a>
+                <a href="/contact">Commencer un Projet</a>
               </Button>
-              
+
               <Button
                 variant="outline"
                 size="lg"
                 asChild
                 className="border-border-light hover:border-primary hover:bg-primary/10"
               >
-                <a href="https://wa.me/237651727673" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/237651727673"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Discuter sur WhatsApp
                 </a>
               </Button>

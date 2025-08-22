@@ -4,14 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   Send,
   MessageCircle,
   Clock,
-  Globe
+  Globe,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -20,7 +20,7 @@ const Contact = () => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -29,21 +29,58 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message envoyé !",
-        description: "Merci pour votre message. Je vous répondrai dans les plus brefs délais."
+    try {
+      const response = await fetch("https://formspree.io/f/xdkdqlnp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          // Optionnel : ajouter d'autres métadonnées
+          _replyto: formData.email, // Pour que Formspree sache à qui répondre
+          _subject: `Nouveau message de ${formData.name}: ${formData.subject}`, // Sujet personnalisé
+        }),
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
-  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      if (response.ok) {
+        // Succès
+        toast({
+          title: "Message envoyé !",
+          description:
+            "Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
+          variant: "default", // ou "success" selon votre config
+        });
+
+        // Réinitialiser le formulaire
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        // Erreur du serveur
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Erreur lors de l'envoi");
+      }
+    } catch (error) {
+      // Gestion des erreurs
+      console.error("Erreur lors de l'envoi:", error);
+      toast({
+        title: "Erreur d'envoi",
+        description:
+          "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.",
+        variant: "destructive", // ou "error" selon votre config
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -52,26 +89,26 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       value: "yvankamsu88@gmail.com",
-      link: "mailto:yvankamsu88@gmail.com"
+      link: "mailto:yvankamsu88@gmail.com",
     },
     {
       icon: Phone,
-      title: "Téléphone", 
+      title: "Téléphone",
       value: "+237 651 727 673",
-      link: "https://wa.me/237651727673"
+      link: "https://wa.me/237651727673",
     },
     {
       icon: MapPin,
       title: "Localisation",
       value: "Yaoundé, Cameroun",
-      link: null
+      link: null,
     },
     {
       icon: Clock,
       title: "Disponibilité",
       value: "Lun - Ven, 8h - 18h",
-      link: null
-    }
+      link: null,
+    },
   ];
 
   return (
@@ -88,7 +125,8 @@ const Contact = () => {
               Contactez-Moi
             </h1>
             <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              Vous avez un projet en tête ? Je serais ravi de discuter avec vous et de voir comment je peux vous aider.
+              Vous avez un projet en tête ? Je serais ravi de discuter avec vous
+              et de voir comment je peux vous aider.
             </p>
           </div>
 
@@ -100,10 +138,11 @@ const Contact = () => {
                   Envoyez-moi un message
                 </CardTitle>
                 <p className="text-text-secondary">
-                  Remplissez le formulaire ci-dessous et je vous répondrai rapidement.
+                  Remplissez le formulaire ci-dessous et je vous répondrai
+                  rapidement.
                 </p>
               </CardHeader>
-              
+
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
@@ -121,7 +160,7 @@ const Contact = () => {
                         className="bg-input border-border-light"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-text-primary text-sm font-medium mb-2">
                         Email *
@@ -137,7 +176,7 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label className="block text-text-primary text-sm font-medium mb-2">
                       Sujet *
@@ -152,7 +191,7 @@ const Contact = () => {
                       className="bg-input border-border-light"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-text-primary text-sm font-medium mb-2">
                       Message *
@@ -167,7 +206,7 @@ const Contact = () => {
                       className="bg-input border-border-light"
                     />
                   </div>
-                  
+
                   <Button
                     type="submit"
                     disabled={isSubmitting}
@@ -194,7 +233,8 @@ const Contact = () => {
                   Informations de Contact
                 </h2>
                 <p className="text-text-secondary text-lg mb-8">
-                  N'hésitez pas à me contacter directement. Je réponds généralement dans les 24 heures.
+                  N'hésitez pas à me contacter directement. Je réponds
+                  généralement dans les 24 heures.
                 </p>
               </div>
 
@@ -202,7 +242,10 @@ const Contact = () => {
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
-                    <Card key={index} className="bg-gradient-card border-border-light shadow-card hover:shadow-glow transition-smooth group">
+                    <Card
+                      key={index}
+                      className="bg-gradient-card border-border-light shadow-card hover:shadow-glow transition-smooth group"
+                    >
                       <CardContent className="p-6">
                         <div className="flex items-center gap-4">
                           <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-primary">
@@ -215,14 +258,24 @@ const Contact = () => {
                             {info.link ? (
                               <a
                                 href={info.link}
-                                target={info.link.startsWith('http') ? '_blank' : undefined}
-                                rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                target={
+                                  info.link.startsWith("http")
+                                    ? "_blank"
+                                    : undefined
+                                }
+                                rel={
+                                  info.link.startsWith("http")
+                                    ? "noopener noreferrer"
+                                    : undefined
+                                }
                                 className="text-primary hover:text-primary-glow transition-smooth"
                               >
                                 {info.value}
                               </a>
                             ) : (
-                              <p className="text-text-secondary">{info.value}</p>
+                              <p className="text-text-secondary">
+                                {info.value}
+                              </p>
                             )}
                           </div>
                         </div>
@@ -237,7 +290,7 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-text-primary">
                   Actions Rapides
                 </h3>
-                
+
                 <div className="space-y-3">
                   <Button
                     asChild
@@ -245,12 +298,16 @@ const Contact = () => {
                     size="lg"
                     className="w-full justify-start border-border-light hover:border-primary hover:bg-primary/10"
                   >
-                    <a href="https://wa.me/237651727673" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://wa.me/237651727673"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <MessageCircle className="mr-3 w-5 h-5" />
                       Discuter sur WhatsApp
                     </a>
                   </Button>
-                  
+
                   <Button
                     asChild
                     variant="outline"
@@ -262,7 +319,7 @@ const Contact = () => {
                       Envoyer un email
                     </a>
                   </Button>
-                  
+
                   <Button
                     asChild
                     variant="outline"
@@ -290,25 +347,28 @@ const Contact = () => {
                       Quel est votre délai de réponse ?
                     </h4>
                     <p className="text-text-secondary text-sm title1">
-                      Je réponds généralement dans les 24 heures, souvent plus rapidement.
+                      Je réponds généralement dans les 24 heures, souvent plus
+                      rapidement.
                     </p>
                   </div>
-                  
+
                   <div>
                     <h4 className="text-text-primary font-medium mb-1">
                       Proposez-vous des devis gratuits ?
                     </h4>
                     <p className="text-text-secondary text-sm">
-                      Oui, je propose un devis gratuit après discussion de vos besoins.
+                      Oui, je propose un devis gratuit après discussion de vos
+                      besoins.
                     </p>
                   </div>
-                  
+
                   <div>
                     <h4 className="text-text-primary font-medium mb-1">
                       Travaillez-vous à distance ?
                     </h4>
                     <p className="text-text-secondary text-sm">
-                      Oui, je travaille avec des clients du monde entier en remote.
+                      Oui, je travaille avec des clients du monde entier en
+                      remote.
                     </p>
                   </div>
                 </CardContent>
