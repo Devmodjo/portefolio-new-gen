@@ -140,8 +140,8 @@ const AdminDashboard = () => {
 
   return (
     <Layout
-      title="Administration - Gestion du Blog | Jumael Kamga"
-      description="Interface d'administration pour la gestion des articles du blog de Jumael Kamga."
+      title="Administration - Gestion du Blog | Modjo Victor"
+      description="Interface d'administration pour la gestion des articles du blog de Modjo Victor."
     >
       <section className="py-20 bg-background min-h-screen">
         <div className="container mx-auto px-4">

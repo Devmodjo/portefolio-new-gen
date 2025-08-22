@@ -51,19 +51,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "jumaelkamga1@gmail.com",
-      link: "mailto:jumaelkamga1@gmail.com"
+      value: "yvankamsu88@gmail.com",
+      link: "mailto:yvankamsu88@gmail.com"
     },
     {
       icon: Phone,
       title: "Téléphone", 
-      value: "+237 679 454 785",
-      link: "https://wa.me/237679454785"
+      value: "+237 651 727 673",
+      link: "https://wa.me/237651727673"
     },
     {
       icon: MapPin,
       title: "Localisation",
-      value: "Douala, Cameroun",
+      value: "Yaoundé, Cameroun",
       link: null
     },
     {
@@ -76,9 +76,9 @@ const Contact = () => {
 
   return (
     <Layout
-      title="Contact - Jumael Kamga | Développeur Web & Designer UI/UX"
-      description="Contactez Jumael Kamga pour vos projets de développement web et design UI/UX. Discutons de vos besoins et concrétisons vos idées ensemble."
-      keywords="contact, Jumael Kamga, développeur web, designer UI/UX, projet, devis, Douala, Cameroun"
+      title="Contact - Modjo Victor | Développeur Web & Backend Specialist"
+      description="Contactez Modjo victor pour vos projets de développement web et design UI/UX. Discutons de vos besoins et concrétisons vos idées ensemble."
+      keywords="contact, Modjo Victor, développeur web, Backend, projet, devis, Yaoundé, Cameroun"
     >
       <section className="py-20 bg-background min-h-screen">
         <div className="container mx-auto px-4">
@@ -245,7 +245,7 @@ const Contact = () => {
                     size="lg"
                     className="w-full justify-start border-border-light hover:border-primary hover:bg-primary/10"
                   >
-                    <a href="https://wa.me/237679454785" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/237651727673" target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-3 w-5 h-5" />
                       Discuter sur WhatsApp
                     </a>
@@ -257,7 +257,7 @@ const Contact = () => {
                     size="lg"
                     className="w-full justify-start border-border-light hover:border-primary hover:bg-primary/10"
                   >
-                    <a href="mailto:jumaelkamga1@gmail.com">
+                    <a href="mailto:yvankamsu88@gmail.com">
                       <Mail className="mr-3 w-5 h-5" />
                       Envoyer un email
                     </a>
@@ -280,16 +280,16 @@ const Contact = () => {
               {/* FAQ Section */}
               <Card className="bg-gradient-card border-border-light shadow-card">
                 <CardHeader>
-                  <CardTitle className="text-xl text-text-primary">
+                  <CardTitle className="text-xl text-text-primary title3">
                     Questions Fréquentes
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="text-text-primary font-medium mb-1">
+                    <h4 className="text-text-primary font-medium mb-1 title2">
                       Quel est votre délai de réponse ?
                     </h4>
-                    <p className="text-text-secondary text-sm">
+                    <p className="text-text-secondary text-sm title1">
                       Je réponds généralement dans les 24 heures, souvent plus rapidement.
                     </p>
                   </div>

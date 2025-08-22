@@ -4,6 +4,9 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
 User-agent: Twitterbot
 Allow: /
 

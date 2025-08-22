@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
 import heroAbout from "/me2.jpg";
+import {AppearOnSrollToLeft, AppearOnSrollToRight} from "@/lib/ScrollEffect"
 
 const AboutSection = () => {
   return (
@@ -35,10 +36,14 @@ const AboutSection = () => {
               </div>
             </div>
           </div> */}
-          <img src={heroAbout} className="rounded-xl" alt="Modjo victor dévellopeur" />
+          <AppearOnSrollToLeft>
+            <img src={heroAbout} className="rounded-xl" alt="Modjo victor dévellopeur" />
+          </AppearOnSrollToLeft>
+          
           
           {/* Right - Content */}
           <div className="space-y-8">
+            <AppearOnSrollToRight>
             <div>
               <p className="text-primary font-medium mb-2 title1">about me</p>
               <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 title3">
@@ -83,8 +88,10 @@ const AboutSection = () => {
                 <p className="text-text-secondary">Years Experience</p>
               </div>
             </div>
+            </AppearOnSrollToRight>
           </div>
         </div>
+        
       </div>
     </section>
   );

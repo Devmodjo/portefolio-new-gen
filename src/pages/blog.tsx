@@ -15,7 +15,7 @@ const mockPosts = [
     excerpt: "Découvrez les technologies et frameworks qui façonnent l'avenir du développement web.",
     content: "Le développement web évolue constamment...",
     category: "Développement",
-    author: "Jumael Kamga",
+    author: "modjo",
     publishedAt: "2024-01-15",
     image: "/blog-post-1.jpg",
     tags: ["React", "Web Development", "Trends"]
@@ -26,7 +26,7 @@ const mockPosts = [
     excerpt: "Les principes fondamentaux du design UI/UX pour créer des expériences utilisateur exceptionnelles.",
     content: "Une interface utilisateur intuitive...",
     category: "Design",
-    author: "Jumael Kamga",
+    author: "Mojdo",
     publishedAt: "2024-01-10",
     image: "/blog-post-2.jpg",
     tags: ["UI/UX", "Design", "User Experience"]
@@ -37,7 +37,7 @@ const mockPosts = [
     excerpt: "Techniques avancées pour améliorer la vitesse et les performances de vos applications web.",
     content: "L'optimisation des performances...",
     category: "Performance",
-    author: "Jumael Kamga",
+    author: "modjo",
     publishedAt: "2024-01-05",
     image: "/blog-post-3.jpg",
     tags: ["Performance", "Optimization", "Web"]
@@ -68,19 +68,19 @@ const Blog = () => {
 
   return (
     <Layout
-      title="Blog - Jumael Kamga | Articles sur le développement web et design"
-      description="Découvrez les derniers articles de Jumael Kamga sur le développement web, le design UI/UX, et les technologies modernes."
-      keywords="blog, développement web, design UI/UX, articles techniques, tutoriels, Jumael Kamga"
+      title="Blog - Modjo victor | Articles sur le développement web et Architecture logicielle"
+      description="Découvrez les derniers articles de Modjo victor sur le développement web, l'architecture logiciel, et les technologies modernes."
+      keywords="blog, développement web, architecture logiciel, articles techniques, tutoriels, Modjo Victor"
     >
       <section className="py-20 bg-background min-h-screen">
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6 title3">
               Blog
             </h1>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              Découvrez mes réflexions sur le développement web, le design UI/UX et les dernières technologies.
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto title1">
+              Découvrez mes réflexions sur le développement web et les dernières technologies.
             </p>
           </div>
 

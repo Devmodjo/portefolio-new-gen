@@ -113,9 +113,9 @@ const Services = () => {
 
   return (
     <Layout
-      title="Services - Développement Web & Design UI/UX | Jumael Kamga"
-      description="Découvrez mes services de développement web, design UI/UX, applications mobiles et solutions digitales personnalisées."
-      keywords="services, développement web, design UI/UX, applications mobiles, backend, API, branding, SEO, Jumael Kamga"
+      title="Services - Développement Web & IT student | Modjo Victor"
+      description="Découvrez mes services de développement web, applications mobiles, Desktop et solutions digitales personnalisées."
+      keywords="services, développement web, developpement Backend, applications mobiles, application desktop, backend, API, branding, SEO, Modjo Victor"
     >
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -267,7 +267,7 @@ const Services = () => {
                 asChild
                 className="border-border-light hover:border-primary hover:bg-primary/10"
               >
-                <a href="https://wa.me/237679454785" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/237651727673" target="_blank" rel="noopener noreferrer">
                   Discuter sur WhatsApp
                 </a>
               </Button>
