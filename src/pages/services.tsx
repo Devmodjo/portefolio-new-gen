@@ -70,22 +70,23 @@ const Services = () => {
         "Applications web complexes",
         "E-commerce",
         "Intégration API",
+        "Tableaux de bord administratifs",
       ],
-      price: "À partir de 500€",
+      price: "Tarifs adaptés selon vos besoins – devis gratuit",
     },
-    {
-      icon: Palette,
-      title: "Design UI/UX",
-      description:
-        "Conception d'interfaces utilisateur intuitives et esthétiques pour une expérience optimale.",
-      features: [
-        "Maquettes et prototypes",
-        "Design d'interface",
-        "Expérience utilisateur",
-        "Design system",
-      ],
-      price: "À partir de 300€",
-    },
+   {
+    icon: Monitor,
+    title: "Applications Desktop",
+    description:
+      "Développement de logiciels sur mesure avec JavaFX et intégration base de données.",
+    features: [
+      "Interfaces modernes et intuitives",
+      "Connexion aux base de données",
+      "Gestion de données et rapports",
+      "Solutions adaptées aux PME",
+    ],
+    price: "Chaque projet est étudié selon sa complexité",
+  },
     {
       icon: Smartphone,
       title: "Applications Mobile",
@@ -95,36 +96,22 @@ const Services = () => {
         "Applications iOS/Android",
         "Interface native",
         "Performance optimisée",
-        "Déploiement stores",
       ],
       price: "À partir de 800€",
     },
     {
-      icon: Database,
-      title: "Backend & API",
-      description:
-        "Développement de solutions backend robustes et d'APIs sécurisées.",
-      features: [
-        "APIs REST/GraphQL",
-        "Base de données",
-        "Authentification",
-        "Hébergement cloud",
-      ],
-      price: "À partir de 400€",
-    },
-    {
-      icon: Megaphone,
-      title: "Branding Digital",
-      description:
-        "Création d'identité visuelle forte et cohérente pour votre marque.",
-      features: [
-        "Logo et charte graphique",
-        "Identité visuelle",
-        "Marketing digital",
-        "Stratégie de marque",
-      ],
-      price: "À partir de 250€",
-    },
+    icon: Database,
+    title: "Backend & APIs",
+    description:
+      "Mise en place de systèmes robustes avec Spring Boot et architectures microservices.",
+    features: [
+      "APIs REST sécurisées",
+      "Authentification et gestion utilisateurs",
+      "Architecture évolutive",
+    ],
+    price: "Solutions personnalisées selon vos besoins métier",
+  },
+   
     {
       icon: Globe,
       title: "Optimisation & SEO",
@@ -199,14 +186,14 @@ const Services = () => {
                     <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-primary">
                       <Icon className="w-8 h-8 text-primary-foreground" />
                     </div>
-                    <CardTitle className="text-xl text-text-primary mb-2">
+                    <CardTitle className="text-xl text-text-primary mb-2 title3">
                       {service.title}
                     </CardTitle>
-                    <p className="text-text-secondary">{service.description}</p>
+                    <p className="text-text-secondary title2">{service.description}</p>
                   </CardHeader>
 
                   <CardContent>
-                    <div className="space-y-3 mb-6">
+                    <div className="space-y-3 mb-6 title1">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-3">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />

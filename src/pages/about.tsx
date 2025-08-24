@@ -7,9 +7,9 @@ import aboutBg from "@/assets/about-bg.jpg";
 
 const About = () => {
   const skills = [
-    { icon: Database, name: "Backend Development", level: 70 },
-    { icon: Code, name: "Frontend Development", level: 55 },
-    // { icon: Palette, name: "", level: 85 },
+    { icon: Database, name: "Backend Development", level: 80 },
+    { icon: Code, name: "Frontend Development", level: 70 },
+    { icon: Palette, name: "Desktop Development", level: 60 },
     { icon: Globe, name: "Web Technologies", level: 49 },
   ];
 
@@ -81,8 +81,8 @@ const About = () => {
                   <p>
                     Mon expertise couvre le développement frontend et backend,
                     ainsi que l'architecture logiciel. J'ai une approche centrée sur
-                    l'utilisateur et je m'efforce de créer des expériences web
-                    fluides et intuitives.
+                    l'utilisateur et je m'efforce de créer des solutions
+                    fiables, intuitives et adaptées à leurs besoins.
                   </p>
                   <p>
                     Actuellement, je poursuis mes études en informatique tout en
