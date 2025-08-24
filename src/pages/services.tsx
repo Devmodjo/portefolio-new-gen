@@ -25,7 +25,7 @@ import {
   SiGitlab,
   SiPostman,
   SiSwagger,
-  SiGit ,
+  SiGit,
   SiMicrogenetics, // Pour Microservices (alternative)
   SiSpringsecurity,
   SiSpring,
@@ -48,7 +48,7 @@ const technologies: Technology[] = [
   { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
   { name: "MySQL", icon: SiMysql, color: "#4479A1" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
-  {name: "Git", icon: SiGit, color: "#FF6C37" },
+  { name: "Git", icon: SiGit, color: "#FF6C37" },
   { name: "GitHub", icon: SiGithub, color: "#181717" },
   { name: "GitLab", icon: SiGitlab, color: "#FCA326" },
   { name: "Postman", icon: SiPostman, color: "#FF6C37" },
@@ -67,26 +67,26 @@ const Services = () => {
         "Création d'applications web modernes et performantes avec les dernières technologies.",
       features: [
         "Sites web responsives",
-        "Applications web complexes",
+        "Applications web",
         "E-commerce",
         "Intégration API",
         "Tableaux de bord administratifs",
       ],
       price: "Tarifs adaptés selon vos besoins – devis gratuit",
     },
-   {
-    icon: Monitor,
-    title: "Applications Desktop",
-    description:
-      "Développement de logiciels sur mesure avec JavaFX et intégration base de données.",
-    features: [
-      "Interfaces modernes et intuitives",
-      "Connexion aux base de données",
-      "Gestion de données et rapports",
-      "Solutions adaptées aux PME",
-    ],
-    price: "Chaque projet est étudié selon sa complexité",
-  },
+    {
+      icon: Monitor,
+      title: "Applications Desktop",
+      description:
+        "Développement de logiciels sur mesure avec JavaFX et intégration base de données.",
+      features: [
+        "Interfaces modernes et intuitives",
+        "Connexion aux base de données",
+        "Gestion de données et rapports",
+        "Solutions adaptées aux PME",
+      ],
+      price: "Chaque projet est étudié selon sa complexité",
+    },
     {
       icon: Smartphone,
       title: "Applications Mobile",
@@ -97,34 +97,34 @@ const Services = () => {
         "Interface native",
         "Performance optimisée",
       ],
-      price: "À partir de 800€",
+      price: "Tarifs adaptés selon vos besoins – devis gratuit",
     },
     {
-    icon: Database,
-    title: "Backend & APIs",
-    description:
-      "Mise en place de systèmes robustes avec Spring Boot et architectures microservices.",
-    features: [
-      "APIs REST sécurisées",
-      "Authentification et gestion utilisateurs",
-      "Architecture évolutive",
-    ],
-    price: "Solutions personnalisées selon vos besoins métier",
-  },
-   
-    {
-      icon: Globe,
-      title: "Optimisation & SEO",
+      icon: Database,
+      title: "Backend & APIs",
       description:
-        "Amélioration des performances et du référencement de votre site web.",
+        "Mise en place de systèmes robustes avec Spring Boot et architectures microservices.",
       features: [
-        "Optimisation SEO",
-        "Performance web",
-        "Analytics",
-        "Maintenance",
+        "APIs REST sécurisées",
+        "Authentification et gestion utilisateurs",
+        "Architecture évolutive",
       ],
-      price: "À partir de 200€",
+      price: "Solutions personnalisées selon vos besoins métier",
     },
+
+    // {
+    //   icon: Globe,
+    //   title: "Optimisation & SEO",
+    //   description:
+    //     "Amélioration des performances et du référencement de votre site web.",
+    //   features: [
+    //     "Optimisation SEO",
+    //     "Performance web",
+    //     "Analytics",
+    //     "Maintenance",
+    //   ],
+    //   price: "",
+    // },
   ];
 
   const processSteps = [
@@ -189,7 +189,9 @@ const Services = () => {
                     <CardTitle className="text-xl text-text-primary mb-2 title3">
                       {service.title}
                     </CardTitle>
-                    <p className="text-text-secondary title2">{service.description}</p>
+                    <p className="text-text-secondary title2">
+                      {service.description}
+                    </p>
                   </CardHeader>
 
                   <CardContent>
@@ -205,7 +207,7 @@ const Services = () => {
                     </div>
 
                     <div className="border-t border-border pt-4">
-                      <p className="text-primary font-semibold mb-4">
+                      <p className="text-primary font-semibold mb-4 title1">
                         {service.price}
                       </p>
                       <Button
