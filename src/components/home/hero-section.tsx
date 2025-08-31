@@ -129,9 +129,10 @@ const HeroSection = () => {
             {/* Main image container */}
             <div className="hidden md:block relative w-80 h-80 md:w-96 md:h-96 bg-gradient-card rounded-full overflow-hidden shadow-card border-4 border-border-light">
               <img
-                src={heroImage}
+                src={"/photo-pro-vert.png"}
                 alt="Modjo victor - Dévellopeur backend & solution numérique"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
 
               {/* Overlay gradient */}

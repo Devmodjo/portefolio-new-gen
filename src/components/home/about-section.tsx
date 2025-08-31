@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
-import heroAbout from "/me2.jpg";
+import heroAbout from "/photo-pro-vert.png";
 import {AppearOnSrollToLeft, AppearOnSrollToRight} from "@/lib/ScrollEffect"
 
 const AboutSection = () => {
@@ -37,7 +37,7 @@ const AboutSection = () => {
             </div>
           </div> */}
           <AppearOnSrollToLeft>
-            <img src={heroAbout} className="rounded-xl" alt="Modjo victor dévellopeur" />
+            <img src={heroAbout} className="rounded-xl" alt="Modjo victor dévellopeur" loading="lazy" />
           </AppearOnSrollToLeft>
           
           
