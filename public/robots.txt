@@ -16,7 +16,6 @@ Allow: /
 User-agent: *
 Allow: /
 
-User-agent: *
-Disallow: /admin/
+
 
 Sitemap: https://modjovictor.vercel.app/sitemap.xml

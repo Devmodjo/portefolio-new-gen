@@ -101,7 +101,7 @@ const AdminDashboard = () => {
 
   // Live subscription to 'projects' collection ordered by createdAt desc
   useEffect(() => {
-    const colRef = collection(db, "projects");
+    const colRef = collection(db, "project");
     // We order by createdAt to ensure stable ordering. createdAt is set on create.
     const q = query(colRef, orderBy("createdAt", "desc"));
     const unsub = onSnapshot(
@@ -191,7 +191,7 @@ const AdminDashboard = () => {
 
       if (editingProjectId) {
         // Update existing doc
-        const docRef = doc(db, "projects", editingProjectId);
+        const docRef = doc(db, "project", editingProjectId);
         await updateDoc(docRef, {
           title: projectForm.title,
           description: projectForm.description,
@@ -207,7 +207,7 @@ const AdminDashboard = () => {
         });
       } else {
         // Create new doc
-        const col = collection(db, "projects");
+        const col = collection(db, "project");
         await addDoc(col, {
           title: projectForm.title,
           description: projectForm.description,
@@ -255,7 +255,7 @@ const AdminDashboard = () => {
   async function handleProjectDelete(id: string) {
     if (!confirm("Supprimer ce projet ?")) return;
     try {
-      await deleteDoc(doc(db, "projects", id));
+      await deleteDoc(doc(db, "project", id));
       toast({
         title: "Succès",
         description: "Projet supprimé.",
@@ -568,7 +568,7 @@ const AdminDashboard = () => {
 
                         <div className="flex items-center gap-1">
                           <User className="w-3 h-3" />
-                          Jumael Kamga
+                          Modjo Victor
                         </div>
                       </div>
 

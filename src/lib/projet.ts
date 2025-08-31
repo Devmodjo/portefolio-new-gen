@@ -9,6 +9,18 @@ import {
   getDoc 
 } from "firebase/firestore";
 
+
+const testFirestore = async () => {
+  try {
+    const snapshot = await getDocs(collection(db, "project"));
+    console.log("Firestore OK  - Nombre de documents :", snapshot.size);
+  } catch (error) {
+    console.error("Erreur Firestore  :", error);
+  }
+};
+
+testFirestore();
+
 export interface Project {
   id: string;
   title: string;
@@ -19,9 +31,9 @@ export interface Project {
   imageUrl?: string;
 }
 
-const projectsCollection = collection(db, "projects"); // "projects" = nom de ta collection Firestore
+const projectsCollection = collection(db, "project"); // "projects" = nom de ta collection Firestore
 
-// ✅ Create
+// Create
 export const createProject = async (project: Omit<Project, "id">) => {
   const docRef = await addDoc(projectsCollection, {
     ...project,
@@ -30,7 +42,7 @@ export const createProject = async (project: Omit<Project, "id">) => {
   return { id: docRef.id, ...project };
 };
 
-// ✅ Read all
+// Read all
 export const getProjects = async (): Promise<Project[]> => {
   const snapshot = await getDocs(projectsCollection);
   return snapshot.docs.map((docSnap) => ({
@@ -39,9 +51,9 @@ export const getProjects = async (): Promise<Project[]> => {
   })) as Project[];
 };
 
-// ✅ Read one
+// Read one
 export const getProjectById = async (id: string): Promise<Project | null> => {
-  const docRef = doc(db, "projects", id);
+  const docRef = doc(db, "project", id);
   const docSnap = await getDoc(docRef);
   if (docSnap.exists()) {
     return { id: docSnap.id, ...docSnap.data() } as Project;
@@ -49,14 +61,14 @@ export const getProjectById = async (id: string): Promise<Project | null> => {
   return null;
 };
 
-// ✅ Update
+// Update
 export const updateProject = async (id: string, updatedData: Partial<Project>) => {
-  const docRef = doc(db, "projects", id);
+  const docRef = doc(db, "project", id);
   await updateDoc(docRef, updatedData);
 };
 
 // ✅ Delete
 export const deleteProject = async (id: string) => {
-  const docRef = doc(db, "projects", id);
+  const docRef = doc(db, "project", id);
   await deleteDoc(docRef);
 };
