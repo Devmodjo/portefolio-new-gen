@@ -67,7 +67,7 @@ export const updateProject = async (id: string, updatedData: Partial<Project>) =
   await updateDoc(docRef, updatedData);
 };
 
-// ✅ Delete
+// Delete
 export const deleteProject = async (id: string) => {
   const docRef = doc(db, "project", id);
   await deleteDoc(docRef);
