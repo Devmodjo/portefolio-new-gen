@@ -178,8 +178,7 @@ const About = () => {
                         Juin 2025 - Septembre 2025
                       </p>
                       <p className="text-text-secondary title1">
-                        Stage de développement backend avec Spring Boot à
-                        Dschang. Création d’API performantes et sécurisées,
+                        Stage de développement backend avec Spring Boot. Création d’API performantes et sécurisées,
                         intégration avec React côté frontend, et gestion des
                         bases de données.
                       </p>

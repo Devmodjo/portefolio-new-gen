@@ -20,7 +20,7 @@ const Contact = () => {
     name: "",
     email: "",
     subject: "",
-    message: "",
+        message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
