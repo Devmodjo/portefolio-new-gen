@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
-import heroAbout from "/photo-pro-vert.png";
+import heroAbout from "/me.png";
 import {AppearOnSrollToLeft, AppearOnSrollToRight} from "@/lib/ScrollEffect"
 
 const AboutSection = () => {

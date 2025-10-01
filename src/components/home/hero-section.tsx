@@ -112,7 +112,7 @@ const HeroSection = () => {
               asChild
               className="border-border-light hover:border-primary hover:bg-primary/10 group"
             >
-              <a href="/Victor Modjo _ LinkedIn.pdf" download>
+              <a href="/VICTOR-MODJO-CV.pdf" download>
                 <Download className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
                 See My CV
               </a>
@@ -129,7 +129,7 @@ const HeroSection = () => {
             {/* Main image container */}
             <div className="hidden md:block relative w-80 h-80 md:w-96 md:h-96 bg-gradient-card rounded-full overflow-hidden shadow-card border-4 border-border-light">
               <img
-                src={"/photo-pro-vert.png"}
+                src={"/me.jpeg"}
                 alt="Modjo victor - Dévellopeur backend & solution numérique"
                 className="w-full h-full object-cover"
                 loading="lazy"

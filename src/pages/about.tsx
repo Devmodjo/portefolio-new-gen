@@ -111,7 +111,7 @@ const About = () => {
                   asChild
                   className="border-border-light hover:border-primary hover:bg-primary/10"
                 >
-                  <a href="/Victor Modjo _ LinkedIn.pdf" download>
+                  <a href="/VICTOR-MODJO-CV.pdf" download>
                     <Download className="mr-2 w-5 h-5" />
                     Télécharger CV
                   </a>
