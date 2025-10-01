@@ -43,7 +43,7 @@ const technologies: Technology[] = [
   { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
   { name: "Java", icon: SiOpenjdk, color: "#ED8B00" },
   { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "PHP", icon: SiPhp, color: "#777BB4" },
+  // { name: "PHP", icon: SiPhp, color: "#777BB4" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
   { name: "MySQL", icon: SiMysql, color: "#4479A1" },
