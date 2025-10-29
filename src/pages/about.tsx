@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { SiSpringboot, SiReact, SiCodewars } from "react-icons/si";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Download, Code, Palette, Globe, Database, Monitor } from "lucide-react";
-import aboutBg from "@/assets/about-bg.jpg";
+import { ScaleTextEffect, AppearOnScale } from "@/lib/ScrollEffect";
+import aboutBg from "@/assets/me2.jpg";
 
 const About = () => {
   const skills = [
@@ -23,6 +24,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           {/* Hero Section */}
           <div className="text-center mb-16">
+            <ScaleTextEffect>
             <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6 title3">
               À Propos de Moi
             </h1>
@@ -30,13 +32,15 @@ const About = () => {
               Découvrez mon parcours et ma passion pour le développement
               d'applications.
             </p>
+            </ScaleTextEffect>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             {/* Image */}
+            <AppearOnScale>
             <div className="flex justify-center">
               <div className="relative">
-                <div className="w-80 h-96 bg-gradient-card rounded-2xl shadow-card border border-border-light overflow-hidden">
+                <div className="w-80 h-96  rounded-2xl shadow-card border border-border-light overflow-hidden">
                   <div
                     className="absolute inset-0 opacity-20"
                     style={{
@@ -64,7 +68,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-
+            </AppearOnScale>
             {/* Content */}
             <div className="space-y-8">
               <div>
@@ -196,10 +200,10 @@ const About = () => {
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-text-primary mb-2 title3">
-                        Développement React (Autodidacte)
+                        Freecodecamp - Développement React
                       </h4>
                       <p className="text-primary font-medium mb-2">
-                        2024 - Présent
+                       Mai 2024 - Juin 2024
                       </p>
                       <p className="text-text-secondary title1">
                         Apprentissage autodidacte de React via FreeCodeCamp et
@@ -223,7 +227,7 @@ const About = () => {
                         Lycée Classique de Dschang – TI et Terminale TI
                       </h4>
                       <p className="text-primary font-medium mb-2">
-                        2023 - 2025
+                        Septembre 2023 - Mai 2025
                       </p>
                       <p className="text-text-secondary title1">
                         Formation générale et scientifique solide, axée sur les

@@ -32,7 +32,7 @@ const HeroSection = () => {
               Modjo Victor.
             </h1>
             <h2 className="text-2xl md:text-3xl text-text-secondary font-medium title1">
-              Spring boot, React Developer & Backend Specialist
+              Développeur Web & Logiciel – Spécialisé Java Spring Boot & React
             </h2>
           </div>
 
