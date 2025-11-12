@@ -1,154 +1,201 @@
+import React from 'react';
+import { motion, TargetAndTransition, Transition } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Download,
-  MessageCircle,
-  Github,
-  Gitlab,
-  Linkedin,
-} from "lucide-react";
-import { AppearOnSrollToLeft } from "@/lib/ScrollEffect";
-import { FaWhatsapp } from "react-icons/fa";
-import heroImage from "@/assets/me.jpg";
+import { ArrowRight, Download, Github, Gitlab, Linkedin, Mail } from "lucide-react";
+import { FaWhatsapp, FaReact, FaJava, FaGitAlt } from "react-icons/fa";
+import {SiSpringboot,SiGithub, SiGitlab} from "react-icons/si";
+import { TypeAnimation } from 'react-type-animation'; // Import the library
 
 
+// --- Data Configuration --- //
+interface SocialLink {
+    name: string;
+    url: string;
+    icon: React.ElementType;
+}
+
+interface ActionButton {
+    text: string;
+    url: string;
+    variant: 'default' | 'outline';
+    icon?: React.ElementType;
+    downloadName?: string;
+}
+
+const socialLinks: SocialLink[] = [
+    { name: "GitHub", url: "https://github.com/Devmodjo", icon: Github },
+    { name: "GitLab", url: "https://gitlab.com/Devmodjo", icon: Gitlab },
+    { name: "LinkedIn", url: "hthttps://www.linkedin.com/in/victor-modjo-5933162a3", icon: Linkedin },
+    { name: "WhatsApp", url: "https://wa.me/+237651727673", icon: FaWhatsapp },
+    { name: "Email", url: "mailto:yvankamsu88@gmail.com", icon: Mail },
+];
+
+const actionButtons: ActionButton[] = [
+    { text: "Let's Talk", url: "https://wa.me/+237651727673", variant: 'default', icon: ArrowRight },
+    { text: "Download CV", url: "/VICTOR-MODJO-CV.pdf", variant: 'outline', icon: Download, downloadName: "Modjo-Victor-CV.pdf" },
+];
+
+// --- Dynamic Decorative Icons Data --- //
+interface DynamicIcon {
+    icon: React.ElementType;
+    size: number;
+    color: string;
+    position: { top?: string; bottom?: string; left?: string; right?: string; };
+    animate: TargetAndTransition; 
+    transition: Transition; 
+    whileHover?: TargetAndTransition; // Add whileHover to the interface
+}
+
+const dynamicIcons: DynamicIcon[] = [
+    { 
+        icon: FaReact, size: 60, color: "#61DAFB", position: { top: "15%", left: "15%" },
+        animate: { y: [0, -25, 0], rotate: [0, 15, -15, 0] }, 
+        transition: { duration: 2.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.5 },
+        whileHover: { scale: 1.3, rotate: 360, transition: { duration: 0.3, ease: "easeOut" } }
+    },
+    { 
+        icon: FaJava, size: 35, color: "#FF0000", position: { bottom: "20%", right: "18%" },
+        animate: { y: [0, 20, 0], rotate: [0, -10, 10, 0] }, 
+        transition: { duration: 2.8, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 1 },
+        whileHover: { scale: 1.3, rotate: 360, transition: { duration: 0.3, ease: "easeOut" } }
+    },
+    { 
+        icon: SiSpringboot, size: 45, color: "#6DB33F", position: { top: "25%", right: "25%" },
+        animate: { x: [0, 20, 0], rotate: [0, 20, -20, 0] }, 
+        transition: { duration: 3.2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 1.5 },
+        whileHover: { scale: 1.3, rotate: 360, transition: { duration: 0.3, ease: "easeOut" } }
+    },
+    { 
+        icon: SiGitlab, size: 30, color: "#ED8B00", position: { bottom: "10%", left: "20%" }, 
+        animate: { y: [0, -20, 0], rotate: [0, 12, -12, 0] }, 
+        transition: { duration: 2.2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 2 },
+        whileHover: { scale: 1.3, rotate: 360, transition: { duration: 0.3, ease: "easeOut" } }
+    },
+    { 
+        icon: FaGitAlt, size: 38, color: "#F05032", position: { top: "55%", left: "10%" }, 
+        animate: { x: [0, -20, 0], rotate: [0, 15, -15, 0] }, 
+        transition: { duration: 3.0, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 2.5 },
+        whileHover: { scale: 1.3, rotate: 360, transition: { duration: 0.3, ease: "easeOut" } }
+    },
+    {
+        icon: SiGithub, size: 46, color: "#000000", position: { bottom: "35%", right: "10%" },
+        animate: { y: [0, 25, 0], rotate: [0, -15, 15, 0] },
+        transition: { duration: 2.7, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 3 },
+        whileHover: { scale: 1.3, rotate: 360, transition: { duration: 0.3, ease: "easeOut" } }
+    },
+   /* { 
+        icon: SiNextdotjs, size: 32, color: "#FFFFFF", position: { top: "65%", right: "20%" }, 
+        animate: { x: [0, 20, 0], rotate: [0, -10, 10, 0] }, 
+        transition: { duration: 2.9, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 3.5 },
+        whileHover: { scale: 1.3, rotate: 360, transition: { duration: 0.3, ease: "easeOut" } }
+    },*/
+];
+
+// --- Animation Variants for main content --- //
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+        opacity: 1,
+        transition: { staggerChildren: 0.1, delayChildren: 0.3 }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } }
+};
+
+// --- Main Component --- //
 const HeroSection = () => {
-  return (
-    <section className="min-h-screen flex items-center bg-gradient-hero relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-float" />
-      </div>
+    return (
+        <section className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
+            {/* Modern Decorative Background */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-0 left-0 w-1/3 h-2/3 bg-primary/5 blur-3xl rounded-full animate-pulse-glow"></div>
+                <div className="absolute bottom-0 right-0 w-1/4 h-1/2 bg-primary-glow/5 blur-3xl rounded-full animate-float"></div>
 
-      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-        {/* Left Content */}
-        <div className="space-y-8 animate-fade-in-up">
-          <div className="space-y-4">
-            <p className="text-primary font-medium text-lg title1">
-              Hello welcome I'm,
-            </p>
-            <h1 className="text-5xl md:text-7xl font-bold text-text-primary leading-tight title3">
-              Modjo Victor.
-            </h1>
-            <h2 className="text-2xl md:text-3xl text-text-secondary font-medium title1">
-              Développeur Web & Logiciel – Spécialisé Java Spring Boot & React
-            </h2>
-          </div>
-
-          <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-lg title2">
-            Je conçois et développe des solutions logicielles innovantes,
-            pensées pour répondre à des besoins réels et résoudre des
-            problématiques concrètes. Spécialisé dans le développement backend,
-            j’apporte des réponses solides, fiables et évolutives à ceux qui
-            recherchent une expertise technique pour transformer leurs idées en
-            solutions performantes.
-          </p>
-
-          {/* Social Links */}
-          <div className="flex space-x-4">
-            <a
-              href="https://wa.me/237651727673"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-secondary hover:bg-primary rounded-full flex items-center justify-center transition-smooth shadow-card hover:shadow-glow"
-            >
-              <FaWhatsapp className="w-5 h-5 animate-fade-in-up" />
-            </a>
-            <a
-              href="mailto:yvankamsu88@gmail.com"
-              className="w-12 h-12 bg-secondary hover:bg-primary rounded-full flex items-center justify-center transition-smooth shadow-card hover:shadow-glow"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-              </svg>
-            </a>
-            <a
-              href="https://github.com/Devmodjo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-secondary hover:bg-primary rounded-full flex items-center justify-center transition-smooth shadow-card hover:shadow-glow"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-            <a
-              href="https://gitlab.com/Devmodjo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-secondary hover:bg-primary rounded-full flex items-center justify-center transition-smooth shadow-card hover:shadow-glow"
-            >
-              <Gitlab className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/victor-modjo-5933162a3"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-secondary hover:bg-primary rounded-full flex items-center justify-center transition-smooth shadow-card hover:shadow-glow"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button
-              asChild
-              size="lg"
-              className="bg-gradient-primary hover:opacity-90 border-0 shadow-primary hover:shadow-glow transition-smooth group"
-            >
-              <a
-                href="https://wa.me/237651727673"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Let's Talk
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-              asChild
-              className="border-border-light hover:border-primary hover:bg-primary/10 group"
-            >
-              <a href="/VICTOR-MODJO-CV.pdf" download>
-                <Download className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                See My CV
-              </a>
-            </Button>
-          </div>
-        </div>
-
-        {/* Right Content - Hero Image */}
-        <div className="flex justify-center lg:justify-end">
-          <div className="relative">
-            {/* Decorative circle background */}
-            <div className="absolute inset-0 bg-gradient-primary rounded-full blur-2xl opacity-20 scale-110 animate-pulse-glow" />
-
-            {/* Main image container */}
-            <div className="hidden md:block relative w-80 h-80 md:w-96 md:h-96 bg-gradient-card rounded-full overflow-hidden shadow-card border-4 border-border-light">
-              <img
-                src={"/me.jpeg"}
-                alt="Modjo victor - Dévellopeur backend & solution numérique"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
-
-              {/* Name badge */}
-              <div className="absolute bottom-6 right-6 bg-background-card/90 backdrop-blur-sm rounded-lg px-4 py-2 border border-border-light">
-                <p className="text-text-primary font-semibold">Modjo victor</p>
-                <p className="text-primary text-sm">Web Developer</p>
-              </div>
+                {/* Dynamic Decorative Icons */}
+                {dynamicIcons.map((item, index) => {
+                    const IconComponent = item.icon;
+                    return (
+                        <motion.div
+                            key={index}
+                            className="absolute z-0 opacity-50"
+                            style={item.position}
+                            animate={item.animate}
+                            transition={item.transition}
+                            whileHover={item.whileHover}
+                        >
+                            <IconComponent size={item.size} style={{ color: item.color }} />
+                        </motion.div>
+                    );
+                })}
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+
+            <div className="container mx-auto px-4 z-10">
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="max-w-3xl mx-auto text-center"
+                >
+                    <motion.p variants={itemVariants} className="text-lg font-medium text-primary mb-2 title1">
+                        Hi, I'm Modjo Victor
+                    </motion.p>
+
+                    <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary leading-tight tracking-tighter mb-6 title3">
+                        <TypeAnimation
+                            sequence={[
+                                'Backend Developer',
+                                1000, // wait 1.5s
+                                'Software Engineer Student',
+                                1000,
+                                'DevSecOps practicer',
+                                1500,
+                                'Cybersecurity Enthusiast',
+                                1500,
+                            ]}
+                            wrapper="span"
+                            speed={50}
+                            repeat={Infinity}
+                            cursor={true}
+                            deletionSpeed={70}
+                        />
+                    </motion.h1>
+
+                    <motion.p variants={itemVariants} className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10 title2">
+                        Je transforme des idées complexes en solutions logicielles robustes et évolutives, avec des compétences en Java/Spring Boot, React/Next.js, Cloud, Automatisation et Sécurité informatique.
+                    </motion.p>
+
+                    {/* Action Buttons */}
+                    <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+                        {actionButtons.map((btn) => (
+                            <Button key={btn.text} asChild size="lg" variant={btn.variant} className={`group ${btn.variant === 'default' ? 'bg-gradient-primary border-0 shadow-primary hover:shadow-glow' : 'border-border-light hover:border-primary hover:bg-primary/10'}`}>
+                                <a 
+                                    href={btn.url} 
+                                    {...(btn.downloadName && { download: btn.downloadName })}
+                                    target={btn.downloadName ? undefined : "_blank"} 
+                                    rel="noopener noreferrer"
+                                >
+                                    {btn.text}
+                                    {btn.icon && <btn.icon className={`ml-2 w-5 h-5 transition-transform ${btn.variant === 'default' ? 'group-hover:translate-x-1' : 'group-hover:scale-110'}`} />}
+                                </a>
+                            </Button>
+                        ))}
+                    </motion.div>
+
+                    {/* Social Links */}
+                    <motion.div variants={itemVariants} className="flex justify-center items-center gap-6">
+                        {socialLinks.map((link) => (
+                            <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name} className="text-text-muted hover:text-primary transition-colors">
+                                <link.icon className="w-6 h-6" />
+                            </a>
+                        ))}
+                    </motion.div>
+                </motion.div>
+            </div>
+        </section>
+    );
 };
 
 export default HeroSection;

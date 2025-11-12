@@ -10,7 +10,7 @@ const About = () => {
   const skills = [
     { icon: Database, name: "Backend Development", level: 80 },
     { icon: Code, name: "Frontend Development", level: 70 },
-    { icon: Palette, name: "Desktop Development", level: 60 },
+    { icon: Monitor, name: "Desktop Development", level: 60 },
     { icon: Globe, name: "Web Technologies", level: 49 },
   ];
 
