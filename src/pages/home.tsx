@@ -2,7 +2,7 @@ import Layout from "@/components/layout/layout";
 import HeroSection from "@/components/home/hero-section";
 import AboutSection from "@/components/home/about-section";
 import ServicesSection from "@/components/home/services-section";
-
+import MyStack from "@/components/MyStack.tsx";
 const Home = () => {
   return (
     <Layout 
@@ -12,6 +12,7 @@ const Home = () => {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <MyStack/>
     </Layout>
   );
 };
