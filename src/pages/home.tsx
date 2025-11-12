@@ -6,9 +6,9 @@ import MyStack from "@/components/MyStack.tsx";
 const Home = () => {
   return (
     <Layout 
-      title = "Modjo victor- Développeur Web Java React & IT student"
+      title = "Modjo victor- Développeur Java React & Software engineer student"
       description = "Portfolio de Modjo victor, développeur web, mobile, desktop spécialisé dans la création de solutions digitales innovantes et performantes."
-      keywords = "développeur web, dévellopeur backend, Java, React, développement web, portfolio, Modjo Victor, solutions digitales">
+      keywords = "développeur Java, développeur backend, Java, React, développement web, portfolio, Modjo Victor, solutions digitales">
       <HeroSection />
       <AboutSection />
       <ServicesSection />
